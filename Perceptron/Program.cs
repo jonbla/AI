@@ -1,4 +1,6 @@
-﻿namespace Perceptron;
+﻿using Shortcuts;
+
+namespace Perceptron;
 
 class Program
 {
