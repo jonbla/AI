@@ -12,12 +12,12 @@
         public Node<T> Parent { get => parent; set => parent = value; }
         public bool Visted = false;
 
-        Node(T Value)
+        public Node(T Value)
         {
             value = Value;
         }
 
-        Node (T Value, List<Node<T>> neighbours)
+        public Node (T Value, List<Node<T>> neighbours)
         {
             value = Value;
             this.neighbours = neighbours;
