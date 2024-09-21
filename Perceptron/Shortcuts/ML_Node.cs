@@ -8,7 +8,8 @@
     {
         //Dictionary<ML_Node, (float weight, float bias)> NodeWeightBias;
         Dictionary<ML_Node, float> NodeWeightPair = new Dictionary<ML_Node, float>();
-        Weight[] weights = new Weight[0];
+        public Weight[] weights_L = new Weight[0];
+        public Weight[] weights_R = new Weight[0];
         float bias = 0f;
         public int LayerNumber;
 
@@ -44,27 +45,45 @@
             NodeWeightPair.Add(node, (float)(rand.NextDouble() - .5f) * 10);
         }*/
 
-        public void AddWeights(Weight[] weights_new)
+        public void AddWeightsLeft(Weight[] weights_new)
         {
-            Weight[] weights_old = weights;
-            weights = new Weight[weights_old.Length + weights_new.Length];
+            Weight[] weights_old = weights_L;
+            weights_L = new Weight[weights_old.Length + weights_new.Length];
             int i = 0;
             foreach (Weight weight in weights_old)
             {
-                weights[i] = weight;
+                weights_L[i] = weight;
                 i++;
             }
 
             foreach (Weight weight in weights_new)
             {
-                weights[i] = weight;
+                weights_L[i] = weight;
+                i++;
+            }
+        }
+
+        public void AddWeightsRight(Weight[] weights_new)
+        {
+            Weight[] weights_old = weights_R;
+            weights_R = new Weight[weights_old.Length + weights_new.Length];
+            int i = 0;
+            foreach (Weight weight in weights_old)
+            {
+                weights_R[i] = weight;
+                i++;
+            }
+
+            foreach (Weight weight in weights_new)
+            {
+                weights_R[i] = weight;
                 i++;
             }
         }
 
         public override string ToString()
         {
-            return $"Layer: {LayerNumber} | Value: {base.Value} | # of weights: {weights.Length} | Bias: {bias}";
+            return $"Layer: {LayerNumber} | Value: {base.Value} | # of weights Left: {weights_L.Length} | # of weights Right: {weights_R.Length} | Bias: {bias}";
         }
     }
 }

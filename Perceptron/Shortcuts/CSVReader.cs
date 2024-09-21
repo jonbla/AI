@@ -66,6 +66,8 @@ namespace Shortcuts
 
             line_number = 0;
 
+            Console.WriteLine($"Dimentions are {x} Columns and {y} rows");
+
             while ((line = sr.ReadLine()) != null)
             {
                 string[] split_line = line.Split(',');

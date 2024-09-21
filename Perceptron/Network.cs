@@ -13,6 +13,7 @@ namespace Perceptron
         public Network(int[] FirstLayerValues, params int[] dimentions)
 		{
 			layers.Add(new Layer(FirstLayerValues));
+            layerCount++;
             for (int i = 0; i < dimentions.Length; i++)
             {
 				Layer newLayer = new Layer(dimentions[i]);
@@ -55,10 +56,10 @@ namespace Perceptron
 				for (int j = 0; j < right_node_size; j++)
 				{
 					weights[j] = new Weight(left.Nodes[i], right.Nodes[j]);
-                    right.Nodes[j].AddWeights(new Weight[] { weights[j] });
+                    right.Nodes[j].AddWeightsLeft(new Weight[] { weights[j] });
                 }
 
-				left.Nodes[i].AddWeights(weights);
+				left.Nodes[i].AddWeightsRight(weights);
             }
 		}
 
@@ -66,7 +67,7 @@ namespace Perceptron
         {
             string output = $"Number of Layers: {layers.Count}\n";
 
-			int i = 1;
+			int i = 0;
 			foreach (Layer layer in layers){
 				output += $"Nodes in layer {i}: {layer.Nodes.Count()}\n";
 				i++;

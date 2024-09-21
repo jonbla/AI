@@ -40,7 +40,7 @@ namespace Perceptron
 			nodes = new ML_Node[size];
 			for (int i = 0; i < size; i++)
 			{
-				nodes[i] = new ML_Node(0, (float)(rand.NextDouble() - .5f) * 10);
+				nodes[i] = new ML_Node((float)(rand.NextDouble() - .5f) * 10, (float)(rand.NextDouble() - .5f) * 10);
                 //Console.WriteLine($"Created node: {nodes[i]}");
 			}
 		}
@@ -61,6 +61,17 @@ namespace Perceptron
         /// <param name="Values">An array of integer values to initialize the nodes.</param>
 		public Layer(int[] Values)
 		{
+            nodes = new ML_Node[Values.Length];
+            Random rand = new Random();
+
+            for (int i = 0; i < Values.Length; i++)
+            {
+                nodes[i] = new ML_Node(Values[i], (float)(rand.NextDouble() - .5f) * 10);
+            }
+        }
+
+        public Layer(float[] Values)
+        {
             nodes = new ML_Node[Values.Length];
             Random rand = new Random();
 

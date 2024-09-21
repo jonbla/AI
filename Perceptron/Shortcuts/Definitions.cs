@@ -7,7 +7,7 @@
     /// <typeparam name="T">The type of data stored in the pack.</typeparam>
     public struct Data_label_pack <T>
     {
-        readonly T[,] data;
+        readonly T[][] data;
         readonly string[] labels;
 
         /// <summary>
@@ -17,19 +17,38 @@
         /// <param name="label_cut">An array of labels corresponding to the data.</param>
         public Data_label_pack(T[,] data_cut, string[] label_cut)
         {
-            data = data_cut;
+            data = ConvertToJaggedArray(data_cut);
             labels = label_cut;
         }
 
         /// <summary>
         /// Gets the 2-dimensional array of data.
         /// </summary>
-        public T[,] Data { get => data;}
+        public T[][] Data { get => data;}
 
         /// <summary>
         /// Gets the array of labels corresponding to the data.
         /// </summary>
         public string[] Labels { get => labels; }
+
+        static T[][] ConvertToJaggedArray<T>(T[,] twoDimensionalArray)
+        {
+            int rows = twoDimensionalArray.GetLength(0);
+            int columns = twoDimensionalArray.GetLength(1);
+
+            T[][] jaggedArray = new T[rows][];
+
+            for (int i = 0; i < rows; i++)
+            {
+                jaggedArray[i] = new T[columns];
+                for (int j = 0; j < columns; j++)
+                {
+                    jaggedArray[i][j] = twoDimensionalArray[i, j];
+                }
+            }
+
+            return jaggedArray;
+        }
     }
 
     public struct Weight
