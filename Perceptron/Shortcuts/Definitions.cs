@@ -31,5 +31,25 @@
         /// </summary>
         public string[] Labels { get => labels; }
     }
+
+    public struct Weight
+    {
+        public ML_Node Left;
+        public float value;
+        public ML_Node Right;
+
+        public Weight(ML_Node left, ML_Node right)
+        {
+            Random rand = new Random();
+            Left = left;
+            value = (float)(rand.NextDouble() - .5f) * 10;
+            Right = right;
+        }
+
+        public void SetWeight(float weight)
+        {
+            value = weight;
+        }
+    }
 }
 
