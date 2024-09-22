@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.Serialization;
 using Shortcuts;
 
 namespace Perceptron
@@ -30,6 +31,15 @@ namespace Perceptron
             }
         }
 
+        public void CalculateValues(Activation activation)
+        {
+            if (layerNumber == 0) return;
+            foreach (ML_Node node in nodes)
+            {
+                node.CalculateValue(activation);
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Layer"/> class with a specified number of nodes.
         /// </summary>
@@ -40,7 +50,7 @@ namespace Perceptron
 			nodes = new ML_Node[size];
 			for (int i = 0; i < size; i++)
 			{
-				nodes[i] = new ML_Node((float)(rand.NextDouble() - .5f) * 10, (float)(rand.NextDouble() - .5f) * 10);
+				nodes[i] = new ML_Node(0f, (float)(rand.NextDouble() - .5f) * 10);
                 //Console.WriteLine($"Created node: {nodes[i]}");
 			}
 		}
@@ -80,22 +90,6 @@ namespace Perceptron
                 nodes[i] = new ML_Node(Values[i], (float)(rand.NextDouble() - .5f) * 10);
             }
         }
-
-        /// <summary>
-        /// Adds a previous layer to the current layer, connecting each node in the current layer
-        /// to every node in the specified previous layer.
-        /// </summary>
-        /// <param name="layer">The previous <see cref="Layer"/> to connect to this layer.</param>
-        /*public void AddPreviousLayer(Layer layer)
-		{
-			foreach (ML_Node node in nodes)
-			{
-				foreach (ML_Node old_node in layer.nodes)
-				{
-					node.Add_neighbour(old_node);
-				}
-			}
-		}*/
     }
 }
 

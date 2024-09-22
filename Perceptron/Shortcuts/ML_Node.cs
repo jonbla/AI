@@ -1,4 +1,6 @@
-﻿namespace Shortcuts
+﻿using System.Runtime.Serialization;
+
+namespace Shortcuts
 {
 
     /// <summary>
@@ -7,10 +9,14 @@
     public class ML_Node : Node<float>
     {
         //Dictionary<ML_Node, (float weight, float bias)> NodeWeightBias;
-        Dictionary<ML_Node, float> NodeWeightPair = new Dictionary<ML_Node, float>();
+        public Dictionary<ML_Node, float> NodeWeightPair = new Dictionary<ML_Node, float>();
+
         public Weight[] weights_L = new Weight[0];
+
         public Weight[] weights_R = new Weight[0];
-        float bias = 0f;
+
+        public float bias = 0f;
+
         public int LayerNumber;
 
         /// <summary>
@@ -23,27 +29,29 @@
             bias = Bias;
         }
 
-        /*public ML_Node(float Value, float Bias, List<Node<float>> neighbours) : base(Value, neighbours)
+        public float CalculateValue(Activation activation)
         {
-            Random rand = new Random();
+            float calculatedValue = 0f;
 
-            bias = Bias;
-
-            foreach (Node<float> node in neighbours)
+            foreach (Weight weight in weights_L)
             {
-                NodeWeightPair.Add((ML_Node)node, (float)(rand.NextDouble()-.5f)*10);
+                calculatedValue += weight.calculated_value;
             }
-        }*/
+            calculatedValue += bias;
 
-        /// <summary>
-        /// Adds a connection to another node with a randomly initialized weight.
-        /// </summary>
-        /// <param name="node">The node to connect to this node.</param>
-        /*public void AddConnection(ML_Node node)
-        {
-            Random rand = new Random();
-            NodeWeightPair.Add(node, (float)(rand.NextDouble() - .5f) * 10);
-        }*/
+            switch (activation)
+            {
+                case Activation.Sigmoid:
+                    calculatedValue = new ML_Math().Sigmoid(calculatedValue);
+                    break;
+                case Activation.ReLU:
+                    calculatedValue = new ML_Math().ReLU(calculatedValue);
+                    break;
+            }
+
+            Value = calculatedValue;
+            return calculatedValue;
+        }
 
         public void AddWeightsLeft(Weight[] weights_new)
         {
@@ -83,7 +91,7 @@
 
         public override string ToString()
         {
-            return $"Layer: {LayerNumber} | Value: {base.Value} | # of weights Left: {weights_L.Length} | # of weights Right: {weights_R.Length} | Bias: {bias}";
+            return $"Layer: {LayerNumber, -2} | Value: {base.Value, -13} | # of weights Left: {weights_L.Length,-5} | # of weights Right: {weights_R.Length,-5} | Bias: {bias}";
         }
     }
 }

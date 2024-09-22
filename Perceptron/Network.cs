@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using Shortcuts;
 
 namespace Perceptron
 {
-	public class Network
+    [DataContract]
+    public class Network
 	{
-		List<Layer> layers = new List<Layer>();
-		int layerCount = 0;
+        List<Layer> layers = new List<Layer>();
+        int layerCount = 0;
 
         public List<Layer> Layers { get => layers; set => layers = value; }
 
@@ -63,9 +65,33 @@ namespace Perceptron
             }
 		}
 
+		public void CalculateNetwork(Activation activation)
+		{
+			foreach (Layer layer in layers)
+			{
+				layer.CalculateValues(activation);
+			}
+		}
+
+		public void PrintInfoVerbose()
+		{
+            for (int j = 0; j < Layers.Count; j++)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    try
+                    {
+                        Console.WriteLine(Layers[j].Nodes[i]);
+                    }
+                    catch (IndexOutOfRangeException) { }
+                }
+                Console.WriteLine("---");
+            }
+        }
+
         public override string ToString()
         {
-            string output = $"Number of Layers: {layers.Count}\n";
+            string output = $"Number of Layers: {layers.Count}\n---\n";
 
 			int i = 0;
 			foreach (Layer layer in layers){
@@ -76,6 +102,25 @@ namespace Perceptron
 			return output;
         }
 
+		public void SetInput(int[] input)
+		{
+			for (int i = 0; i < layers[0].Nodes.Length; i++)
+			{
+				layers[0].Nodes[i].Value = input[i];
+            }
+		}
+
+		public float GetCost(float[] target)
+		{
+			float cost = 0f;
+
+			for (int i = 0; i < layers[layerCount-1].Nodes.Length; i++)
+			{
+				cost += MathF.Pow(layers[layerCount-1].Nodes[i].Value - target[i], 2);
+            }
+
+			return cost;
+		}
     }
 }
 

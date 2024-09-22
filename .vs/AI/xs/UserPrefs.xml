@@ -1,4 +1,32 @@
 ﻿<Properties StartupConfiguration="{F64D1BB3-505E-48EC-A4AE-EB757DA3A1E7}|Default">
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Perceptron FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Perceptron/Program.cs">
+    <Files>
+      <File FileName="Perceptron/Program.cs" Line="28" Column="11" />
+      <File FileName="Perceptron/Shortcuts/CSVReader.cs" />
+      <File FileName="Perceptron/Layer.cs" Line="81" Column="39" />
+      <File FileName="Perceptron/Network.cs" Line="30" Column="1" />
+      <File FileName="Perceptron/Shortcuts/ML_Node.cs" Line="34" Column="10" />
+      <File FileName="Perceptron/Shortcuts/Node.cs" Line="1" Column="1" />
+      <File FileName="Perceptron/Shortcuts/Definitions.cs" Line="56" Column="19" />
+      <File FileName="Perceptron/ML_Math.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AI" expanded="True">
+            <Node name="Perceptron">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Perceptron PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

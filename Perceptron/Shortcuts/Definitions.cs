@@ -1,4 +1,6 @@
-﻿namespace Shortcuts
+﻿using System.Runtime.Serialization;
+
+namespace Shortcuts
 {
 
     /// <summary>
@@ -54,21 +56,29 @@
     public struct Weight
     {
         public ML_Node Left;
-        public float value;
+        public float Strength;
         public ML_Node Right;
+
+        public float calculated_value { get => Left.Value * Strength; }
 
         public Weight(ML_Node left, ML_Node right)
         {
             Random rand = new Random();
             Left = left;
-            value = (float)(rand.NextDouble() - .5f) * 10;
+            Strength = (float)(rand.NextDouble() - .5f) * 10;
             Right = right;
         }
 
         public void SetWeight(float weight)
         {
-            value = weight;
+            Strength = weight;
         }
+    }
+
+    public enum Activation
+    {
+        Sigmoid,
+        ReLU
     }
 }
 
