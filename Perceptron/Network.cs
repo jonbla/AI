@@ -4,13 +4,13 @@ using Shortcuts;
 
 namespace Perceptron
 {
-    [DataContract]
     public class Network
 	{
         List<Layer> layers = new List<Layer>();
         int layerCount = 0;
 
         public List<Layer> Layers { get => layers; set => layers = value; }
+        public int LayerCount { get => layerCount; set => layerCount = value; }
 
         public Network(int[] FirstLayerValues, params int[] dimentions)
 		{

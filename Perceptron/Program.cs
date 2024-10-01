@@ -1,5 +1,6 @@
 ﻿using Shortcuts;
 using System.Text.Json;
+using IO;
 
 namespace Perceptron;
 
@@ -20,8 +21,8 @@ class Program
         }
 
         Console.WriteLine("\nCreating Network\n");
-        //Network network = new Network(CSVDataPack.Data[0], 16, 16, 16, 10);
-        Network network = new Network(16, 16, 16, 16, 10);
+        Network network = new Network(CSVDataPack.Data[0], 16, 16, 16, 10);
+        //Network network = new Network(16, 16, 16, 16, 10);
         Console.WriteLine("\nNetwork Creation Success\n");
         Console.WriteLine(network);
 
@@ -30,12 +31,6 @@ class Program
         Console.WriteLine("\nCalculating values\n");
 
         network.CalculateNetwork(Activation.Sigmoid);
-
-        string fileName = "/Users/dannysedlov/Documents/School/Masters/AM6007 (Computing with numerical)/AI/Network.json";
-        JsonSerializerOptions JSONoptions = new JsonSerializerOptions();
-        JSONoptions.WriteIndented = true;
-        string jsonString = JsonSerializer.Serialize(network, options: JSONoptions);
-        File.WriteAllText(fileName, jsonString);
 
         //network.PrintInfoVerbose();
 
@@ -53,6 +48,10 @@ class Program
         avgCost = avgCost / CSVDataPack.Data.Length;
 
         Console.WriteLine($"Avg Cost after {CSVDataPack.Data.Length} iterations: {avgCost}");
+
+
+        JSONSerializer serializer = new JSONSerializer();
+        serializer.DumpToFile(network, "/Users/dannysedlov/Documents/School/Masters/AM6007 (Computing with numerical)/AI/Network.json");
 
         //Console.ReadLine();
     }

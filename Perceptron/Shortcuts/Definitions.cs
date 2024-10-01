@@ -55,23 +55,26 @@ namespace Shortcuts
 
     public struct Weight
     {
-        public ML_Node Left;
-        public float Strength;
-        public ML_Node Right;
+        public ML_Node left;
+        float strength;
+        public ML_Node right;
 
-        public float calculated_value { get => Left.Value * Strength; }
+        public float calculated_value { get => left.Value * strength; }
+        //public ML_Node Left { get => left; set => left = value; }
+        public float Strength { get => strength; set => strength = value; }
+        //public ML_Node Right { get => right; set => right = value; }
 
         public Weight(ML_Node left, ML_Node right)
         {
             Random rand = new Random();
-            Left = left;
-            Strength = (float)(rand.NextDouble() - .5f) * 10;
-            Right = right;
+            this.left = left;
+            strength = (float)(rand.NextDouble() - .5f) * 10;
+            this.right = right;
         }
 
         public void SetWeight(float weight)
         {
-            Strength = weight;
+            strength = weight;
         }
     }
 

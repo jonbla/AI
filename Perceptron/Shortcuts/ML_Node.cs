@@ -2,30 +2,35 @@
 
 namespace Shortcuts
 {
-
     /// <summary>
     /// A specialized node class for machine learning applications, inheriting from the base Node class with float values.
     /// </summary>
-    public class ML_Node : Node<float>
+    public class ML_Node
     {
-        //Dictionary<ML_Node, (float weight, float bias)> NodeWeightBias;
-        public Dictionary<ML_Node, float> NodeWeightPair = new Dictionary<ML_Node, float>();
+        float value;
 
-        public Weight[] weights_L = new Weight[0];
+        Weight[] weights_L = new Weight[0];
 
-        public Weight[] weights_R = new Weight[0];
+        Weight[] weights_R = new Weight[0];
 
-        public float bias = 0f;
+        float bias = 0f;
 
-        public int LayerNumber;
+        int layerNumber;
+
+        public float Value { get => value; set => this.value = value; }
+        public Weight[] Weights_L { get => weights_L; set => weights_L = value; }
+        public Weight[] Weights_R { get => weights_R; set => weights_R = value; }
+        public float Bias { get => bias; set => bias = value; }
+        public int LayerNumber { get => layerNumber; set => layerNumber = value; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ML_Node"/> class with a specified value and bias.
         /// </summary>
         /// <param name="Value">The floating-point value of this node.</param>
         /// <param name="Bias">The bias value for this node.</param>
-        public ML_Node(float Value, float Bias) : base(Value)
+        public ML_Node(float Value, float Bias)
         {
+            value = Value;
             bias = Bias;
         }
 
@@ -91,7 +96,7 @@ namespace Shortcuts
 
         public override string ToString()
         {
-            return $"Layer: {LayerNumber, -2} | Value: {base.Value, -13} | # of weights Left: {weights_L.Length,-5} | # of weights Right: {weights_R.Length,-5} | Bias: {bias}";
+            return $"Layer: {LayerNumber, -2} | Value: {value, -13} | # of weights Left: {weights_L.Length,-5} | # of weights Right: {weights_R.Length,-5} | Bias: {bias}";
         }
     }
 }
