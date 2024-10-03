@@ -13,7 +13,11 @@ namespace Shortcuts
 
         Weight[] weights_R = new Weight[0];
 
-        float bias = 0f;
+        float bias = 0f; //b
+
+        float z = 0f;
+
+        float a = 0f;
 
         int layerNumber;
 
@@ -22,6 +26,8 @@ namespace Shortcuts
         public Weight[] Weights_R { get => weights_R; set => weights_R = value; }
         public float Bias { get => bias; set => bias = value; }
         public int LayerNumber { get => layerNumber; set => layerNumber = value; }
+        public float Z { get => z; set => z = value; }
+        public float A { get => a; set => a = value; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ML_Node"/> class with a specified value and bias.
@@ -42,7 +48,10 @@ namespace Shortcuts
             {
                 calculatedValue += weight.calculated_value;
             }
+
             calculatedValue += bias;
+
+            z = calculatedValue;
 
             switch (activation)
             {
@@ -53,6 +62,8 @@ namespace Shortcuts
                     calculatedValue = new ML_Math().ReLU(calculatedValue);
                     break;
             }
+
+            a = calculatedValue;
 
             Value = calculatedValue;
             return calculatedValue;

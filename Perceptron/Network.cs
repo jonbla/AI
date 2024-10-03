@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 using Shortcuts;
 
 namespace Perceptron
 {
     public class Network
 	{
+        private ML_Math math = new ML_Math();
+
         List<Layer> layers = new List<Layer>();
         int layerCount = 0;
 
@@ -71,7 +74,23 @@ namespace Perceptron
 			{
 				layer.CalculateValues(activation);
 			}
-		}
+        }
+
+		public void DoSoftmax()
+		{
+            float[] vals = new float[layers[layers.Count - 1].Nodes.Length];
+            for (int i = 0; i < vals.Length; i++)
+            {
+                vals[i] = layers[layers.Count - 1].Nodes[i].Value;
+            }
+
+            math.Softmax(ref vals);
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                layers[layers.Count - 1].Nodes[i].Value = vals[i];
+            }
+        }
 
 		public void PrintInfoVerbose()
 		{
@@ -104,6 +123,10 @@ namespace Perceptron
 
 		public void SetInput(int[] input)
 		{
+			if (input.Length != layers[0].Nodes.Length)
+			{
+				throw new ArgumentException(nameof(input.Length), $"{nameof(input)} must equal input layer size");
+            }
 			for (int i = 0; i < layers[0].Nodes.Length; i++)
 			{
 				layers[0].Nodes[i].Value = input[i];
@@ -118,9 +141,21 @@ namespace Perceptron
 			{
 				cost += MathF.Pow(layers[layerCount-1].Nodes[i].Value - target[i], 2);
             }
-
 			return cost;
 		}
+
+        void backpropagate(float learnRate)
+        {
+
+        }
+
+		public void Train(int epochs, float learnRate)
+		{
+            if (layerCount < 3)
+            {
+                throw new InvalidOperationException("Network must contain at least 3 layers");
+            }
+        }
     }
 }
 

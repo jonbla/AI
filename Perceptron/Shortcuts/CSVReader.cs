@@ -28,6 +28,7 @@ namespace Shortcuts
                 file_path = file;
             } catch (FileNotFoundException)
             {
+                sr = new StreamReader(file);
                 file_path = "";
             }
         }

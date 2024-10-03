@@ -23,6 +23,7 @@ class Program
         Console.WriteLine("\nCreating Network\n");
         Network network = new Network(CSVDataPack.Data[0], 16, 16, 16, 10);
         //Network network = new Network(16, 16, 16, 16, 10);
+        //Network network = new Network(16, 10);
         Console.WriteLine("\nNetwork Creation Success\n");
         Console.WriteLine(network);
 
@@ -38,7 +39,7 @@ class Program
 
         avgCost += network.GetCost(GetTargetVector(Int32.Parse(CSVDataPack.Labels[0])));
 
-        for (int i = 1; i < CSVDataPack.Data.Length; i++)
+        for (int i = 0; i < CSVDataPack.Data.Length; i++)
         {
             network.SetInput(CSVDataPack.Data[i]);
             network.CalculateNetwork(Activation.Sigmoid);
@@ -47,11 +48,11 @@ class Program
 
         avgCost = avgCost / CSVDataPack.Data.Length;
 
-        Console.WriteLine($"Avg Cost after {CSVDataPack.Data.Length} iterations: {avgCost}");
+        Console.WriteLine($"Avg Cost after {CSVDataPack.Data.Length} lines: {avgCost}");
 
 
         JSONSerializer serializer = new JSONSerializer();
-        serializer.DumpToFile(network, "/Users/dannysedlov/Documents/School/Masters/AM6007 (Computing with numerical)/AI/Network.json");
+        //serializer.DumpToFile(network, "/Users/dannysedlov/Documents/School/Masters/AM6007 (Computing with numerical)/AI/Network.json", true);
 
         //Console.ReadLine();
     }
