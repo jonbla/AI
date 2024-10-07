@@ -1,4 +1,4 @@
-﻿namespace Shortcuts
+﻿namespace Tools
 {
 
     /// <summary>

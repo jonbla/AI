@@ -1,6 +1,7 @@
 ﻿using System.Runtime.Serialization;
+using Tools;
 
-namespace Shortcuts
+namespace Perceptron
 {
     /// <summary>
     /// A specialized node class for machine learning applications, inheriting from the base Node class with float values.

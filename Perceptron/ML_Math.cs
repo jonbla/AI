@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Shortcuts
+namespace Tools
 {
 	public class ML_Math
 	{

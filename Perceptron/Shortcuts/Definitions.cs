@@ -1,6 +1,7 @@
 ﻿using System.Runtime.Serialization;
+using Perceptron;
 
-namespace Shortcuts
+namespace Tools
 {
 
     /// <summary>

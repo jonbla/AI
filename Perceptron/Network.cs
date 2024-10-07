@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
-using Shortcuts;
+using Tools;
 
 namespace Perceptron
 {

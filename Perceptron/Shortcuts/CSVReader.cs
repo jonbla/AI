@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Shortcuts
+namespace Tools
 {
     /// <summary>
     /// A class to read CSV files and convert them into a 2D array of a specified data type.
