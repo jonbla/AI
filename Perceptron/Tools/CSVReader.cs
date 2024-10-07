@@ -29,6 +29,7 @@ namespace Tools
                 file_path = file;
             } catch (FileNotFoundException)
             {
+                Console.WriteLine($"File Not Found: {file}");
                 file_path = "";
             }
         }
@@ -41,11 +42,14 @@ namespace Tools
         /// <returns>A 2-dimensional array containing the data read from the CSV file.</returns>
         public T[,] Read_CSV(bool has_header, string file = "")
         {
+            //If we didn't set a file path upon init, lets set it now
             if (file == "") file = file_path;
-            Debug.Assert(file != "");
 
+            //If at no point a file was set, scream and die
+            if (file == "" && sr == null) throw new ArgumentNullException();
+            
             if (sr == null) sr = new StreamReader(file);
-            Debug.Assert(sr != null);
+            Debug.Assert(sr != null); //Sanity check, if we reach this point, this should never be null
 
             string line;
             int x = 0;
@@ -85,9 +89,11 @@ namespace Tools
                 {
                     try
                     {
+                        //Try to turn file contents into data type
                         values[line_number,i] = (T)Convert.ChangeType(split_line[i], typeof(T));
                     } catch
                     {
+                        //or set it to default value (ie: 0 for int, "" for string, 0f for float, or null for pretty much anything else)
                         values[line_number,i] = default(T);
                     }
                 }
@@ -100,7 +106,6 @@ namespace Tools
         /// Splits the input data into separate data and label arrays based on the specified number of columns.
         /// </summary>
         /// <param name="in_data">The input 2-dimensional array to be split.</param>
-        /// <param name="cut">The number of columns to use as labels.</param>
         /// <returns>A <see cref="Data_label_pack{T}"/> containing the split data and labels.</returns>
         public Data_label_pack<T> Split_data(T[,] in_data)
         {
@@ -111,12 +116,12 @@ namespace Tools
             {
                 for (int j = 0; j < in_data.GetLength(1); j++)
                 {
-                    if(j < 1)
+                    if(j < 1) //if first column, set lables
                     {
                         //Console.WriteLine($"{i}, {j}");
                         labels[i] = in_data[i, j].ToString();
                     }
-                    else
+                    else      //else set data
                     {
                         data[i, j - 1] = in_data[i, j];
                     }

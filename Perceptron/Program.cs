@@ -49,10 +49,13 @@ class Program
         Console.WriteLine($"Avg Cost after {CSVDataPack.Data.Length} lines: {avgCost}");
 
 
-        JSONSerializer serializer = new JSONSerializer();
+        //JSONSerializer serializer = new JSONSerializer();
         //serializer.DumpToFile(network, "/Users/dannysedlov/Documents/School/Masters/AM6007 (Computing with numerical)/AI/Network.json", true);
 
         //Console.ReadLine();
+
+        Console.WriteLine("Press Any Key To Continue");
+        Console.ReadKey();
     }
 
     static float[] GetTargetVector(int target_value)
