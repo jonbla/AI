@@ -400,7 +400,7 @@ Perceptron/*.msp
 Perceptron/*.sln.iml
 
 #Network savefile
-Network.json
+Perceptron/Network.json
 
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio

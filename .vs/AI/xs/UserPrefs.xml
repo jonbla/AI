@@ -1,23 +1,27 @@
 ﻿<Properties StartupConfiguration="{F64D1BB3-505E-48EC-A4AE-EB757DA3A1E7}|Default">
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Perceptron/Program.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Perceptron PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Perceptron/Network.cs">
     <Files>
-      <File FileName="Perceptron/Program.cs" Line="28" Column="11" />
+      <File FileName="Perceptron/Program.cs" Line="52" Column="1" />
       <File FileName="Perceptron/Shortcuts/CSVReader.cs" />
-      <File FileName="Perceptron/Layer.cs" Line="81" Column="39" />
-      <File FileName="Perceptron/Network.cs" Line="30" Column="1" />
-      <File FileName="Perceptron/Shortcuts/ML_Node.cs" Line="34" Column="10" />
-      <File FileName="Perceptron/Shortcuts/Node.cs" Line="1" Column="1" />
-      <File FileName="Perceptron/Shortcuts/Definitions.cs" Line="56" Column="19" />
+      <File FileName="Perceptron/Layer.cs" />
+      <File FileName="Perceptron/Network.cs" Line="150" Column="1" />
+      <File FileName="Perceptron/Shortcuts/ML_Node.cs" Line="50" Column="14" />
+      <File FileName="Perceptron/Shortcuts/Definitions.cs" />
       <File FileName="Perceptron/ML_Math.cs" />
+      <File FileName="Perceptron/Shortcuts/Node.cs" />
+      <File FileName="Perceptron/JSONSerializer.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AI" expanded="True">
             <Node name="Perceptron">
-              <Node name="Program.cs" selected="True" />
+              <Node name="Shortcuts" expanded="True" />
+              <Node name="Network.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -27,6 +31,4 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Perceptron PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
