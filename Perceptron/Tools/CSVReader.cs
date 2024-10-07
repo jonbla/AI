@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Diagnostics;
 
 namespace Tools
 {
@@ -9,7 +10,7 @@ namespace Tools
     public class CSVReader<T>
     {
         string file_path = "";
-        StreamReader sr;
+        StreamReader? sr;
 
         /// <summary>
         /// Gets or sets the file path of the CSV file to be read.
@@ -28,7 +29,6 @@ namespace Tools
                 file_path = file;
             } catch (FileNotFoundException)
             {
-                sr = new StreamReader(file);
                 file_path = "";
             }
         }
@@ -42,6 +42,11 @@ namespace Tools
         public T[,] Read_CSV(bool has_header, string file = "")
         {
             if (file == "") file = file_path;
+            Debug.Assert(file != "");
+
+            if (sr == null) sr = new StreamReader(file);
+            Debug.Assert(sr != null);
+
             string line;
             int x = 0;
             int y = 0;
@@ -50,6 +55,7 @@ namespace Tools
 
             if (has_header) sr.ReadLine();
 
+            //Count # of lines in file
             while ((line = sr.ReadLine()) != null)
             {
                 if(line_number == 0)
@@ -60,6 +66,7 @@ namespace Tools
             }
             y = line_number;
 
+            //Reset File Pointer
             sr.BaseStream.Position = 0;
             if (has_header) sr.ReadLine();
 
@@ -69,6 +76,7 @@ namespace Tools
 
             Console.WriteLine($"Dimentions are {x} Columns and {y} rows");
 
+            //Read the File this time
             while ((line = sr.ReadLine()) != null)
             {
                 string[] split_line = line.Split(',');
@@ -94,23 +102,23 @@ namespace Tools
         /// <param name="in_data">The input 2-dimensional array to be split.</param>
         /// <param name="cut">The number of columns to use as labels.</param>
         /// <returns>A <see cref="Data_label_pack{T}"/> containing the split data and labels.</returns>
-        public Data_label_pack<T> Split_data(T[,] in_data, int cut)
+        public Data_label_pack<T> Split_data(T[,] in_data)
         {
-            T[,] data = new T[in_data.GetLength(0), in_data.GetLength(1) - cut];
+            T[,] data = new T[in_data.GetLength(0), in_data.GetLength(1) - 1];
             string[] labels = new string[in_data.GetLength(0)];
 
             for (int i = 0; i < in_data.GetLength(0); i++)
             {
                 for (int j = 0; j < in_data.GetLength(1); j++)
                 {
-                    if(j < cut)
+                    if(j < 1)
                     {
                         //Console.WriteLine($"{i}, {j}");
                         labels[i] = in_data[i, j].ToString();
                     }
                     else
                     {
-                        data[i, j - cut] = in_data[i, j];
+                        data[i, j - 1] = in_data[i, j];
                     }
                 }
             }

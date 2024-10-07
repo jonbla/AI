@@ -10,9 +10,7 @@ class Program
     {
         CSVReader<int> CSV = new CSVReader<int>("/Users/dannysedlov/Documents/School/Masters/Datasets/MNIST_CSV/mnist_test.csv");
         int[,] CSVdata = CSV.Read_CSV(true);
-        Console.WriteLine(CSVdata.GetLength(0));
-        Console.WriteLine(CSVdata.GetLength(1));
-        Data_label_pack<int> CSVDataPack = CSV.Split_data(CSVdata, 1);
+        Data_label_pack<int> CSVDataPack = CSV.Split_data(CSVdata);
         int[] numericLabels = new int[CSVDataPack.Labels.Count()];
 
         for (int i = 0; i < CSVDataPack.Labels.Count(); i++)
