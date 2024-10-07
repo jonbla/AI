@@ -33,7 +33,7 @@ namespace Shortcuts
         /// </summary>
         public string[] Labels { get => labels; }
 
-        private static T[][] ConvertToJaggedArray<T>(T[,] twoDimensionalArray)
+        static T[][] ConvertToJaggedArray<T>(T[,] twoDimensionalArray)
         {
             int rows = twoDimensionalArray.GetLength(0);
             int columns = twoDimensionalArray.GetLength(1);
@@ -48,6 +48,7 @@ namespace Shortcuts
                     jaggedArray[i][j] = twoDimensionalArray[i, j];
                 }
             }
+
             return jaggedArray;
         }
     }

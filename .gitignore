@@ -8,241 +8,241 @@
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
 # User-specific files
-Perceptron/*.rsuser
-Perceptron/*.suo
-Perceptron/*.user
-Perceptron/*.userosscache
-Perceptron/*.sln.docstates
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
 # User-specific files (MonoDevelop/Xamarin Studio)
-Perceptron/*.userprefs
+*.userprefs
 
 # Mono auto generated files
-Perceptron/mono_crash.*
+mono_crash.*
 
 # Build results
-Perceptron/[Dd]ebug/
-Perceptron/[Dd]ebugPublic/
-Perceptron/[Rr]elease/
-Perceptron/[Rr]eleases/
-Perceptron/x64/
-Perceptron/x86/
-Perceptron/[Ww][Ii][Nn]32/
-Perceptron/[Aa][Rr][Mm]/
-Perceptron/[Aa][Rr][Mm]64/
-Perceptron/bld/
-Perceptron/[Bb]in/
-Perceptron/[Oo]bj/
-Perceptron/[Ll]og/
-Perceptron/[Ll]ogs/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
 
 # Visual Studio 2015/2017 cache/options directory
-Perceptron/.vs/
+.vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
 # Visual Studio 2017 auto generated files
-Perceptron/Generated\ Files/
+Generated\ Files/
 
 # MSTest test Results
-Perceptron/[Tt]est[Rr]esult*/
-Perceptron/[Bb]uild[Ll]og.*
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
 
 # NUnit
-Perceptron/*.VisualState.xml
-Perceptron/TestResult.xml
-Perceptron/nunit-*.xml
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
 
 # Build Results of an ATL Project
-Perceptron/[Dd]ebugPS/
-Perceptron/[Rr]eleasePS/
-Perceptron/dlldata.c
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
 
 # Benchmark Results
-Perceptron/BenchmarkDotNet.Artifacts/
+BenchmarkDotNet.Artifacts/
 
 # .NET Core
-Perceptron/project.lock.json
-Perceptron/project.fragment.lock.json
-Perceptron/artifacts/
+project.lock.json
+project.fragment.lock.json
+artifacts/
 
 # ASP.NET Scaffolding
-Perceptron/ScaffoldingReadMe.txt
+ScaffoldingReadMe.txt
 
 # StyleCop
-Perceptron/StyleCopReport.xml
+StyleCopReport.xml
 
 # Files built by Visual Studio
-Perceptron/*_i.c
-Perceptron/*_p.c
-Perceptron/*_h.h
-Perceptron/*.ilk
-Perceptron/*.meta
-Perceptron/*.obj
-Perceptron/*.iobj
-Perceptron/*.pch
-Perceptron/*.pdb
-Perceptron/*.ipdb
-Perceptron/*.pgc
-Perceptron/*.pgd
-Perceptron/*.rsp
-Perceptron/*.sbr
-Perceptron/*.tlb
-Perceptron/*.tli
-Perceptron/*.tlh
-Perceptron/*.tmp
-Perceptron/*.tmp_proj
-Perceptron/*_wpftmp.csproj
-Perceptron/*.log
-Perceptron/*.tlog
-Perceptron/*.vspscc
-Perceptron/*.vssscc
-Perceptron/.builds
-Perceptron/*.pidb
-Perceptron/*.svclog
-Perceptron/*.scc
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
 
 # Chutzpah Test files
-Perceptron/_Chutzpah*
+_Chutzpah*
 
 # Visual C++ cache files
-Perceptron/ipch/
-Perceptron/*.aps
-Perceptron/*.ncb
-Perceptron/*.opendb
-Perceptron/*.opensdf
-Perceptron/*.sdf
-Perceptron/*.cachefile
-Perceptron/*.VC.db
-Perceptron/*.VC.VC.opendb
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
 
 # Visual Studio profiler
-Perceptron/*.psess
-Perceptron/*.vsp
-Perceptron/*.vspx
-Perceptron/*.sap
+*.psess
+*.vsp
+*.vspx
+*.sap
 
 # Visual Studio Trace Files
-Perceptron/*.e2e
+*.e2e
 
 # TFS 2012 Local Workspace
-Perceptron/$tf/
+$tf/
 
 # Guidance Automation Toolkit
-Perceptron/*.gpState
+*.gpState
 
 # ReSharper is a .NET coding add-in
-Perceptron/_ReSharper*/
-Perceptron/*.[Rr]e[Ss]harper
-Perceptron/*.DotSettings.user
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
 
 # TeamCity is a build add-in
-Perceptron/_TeamCity*
+_TeamCity*
 
 # DotCover is a Code Coverage Tool
-Perceptron/*.dotCover
+*.dotCover
 
 # AxoCover is a Code Coverage Tool
-Perceptron/.axoCover/*
-Perceptron/!.axoCover/settings.json
+.axoCover/*
+!.axoCover/settings.json
 
 # Coverlet is a free, cross platform Code Coverage Tool
-Perceptron/coverage*.json
-Perceptron/coverage*.xml
-Perceptron/coverage*.info
+coverage*.json
+coverage*.xml
+coverage*.info
 
 # Visual Studio code coverage results
-Perceptron/*.coverage
-Perceptron/*.coveragexml
+*.coverage
+*.coveragexml
 
 # NCrunch
-Perceptron/_NCrunch_*
-Perceptron/.*crunch*.local.xml
-Perceptron/nCrunchTemp_*
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
 
 # MightyMoose
-Perceptron/*.mm.*
-Perceptron/AutoTest.Net/
+*.mm.*
+AutoTest.Net/
 
 # Web workbench (sass)
-Perceptron/.sass-cache/
+.sass-cache/
 
 # Installshield output folder
-Perceptron/[Ee]xpress/
+[Ee]xpress/
 
 # DocProject is a documentation generator add-in
-Perceptron/DocProject/buildhelp/
-Perceptron/DocProject/Help/*.HxT
-Perceptron/DocProject/Help/*.HxC
-Perceptron/DocProject/Help/*.hhc
-Perceptron/DocProject/Help/*.hhk
-Perceptron/DocProject/Help/*.hhp
-Perceptron/DocProject/Help/Html2
-Perceptron/DocProject/Help/html
+DocProject/buildhelp/
+DocProject/Help/*.HxT
+DocProject/Help/*.HxC
+DocProject/Help/*.hhc
+DocProject/Help/*.hhk
+DocProject/Help/*.hhp
+DocProject/Help/Html2
+DocProject/Help/html
 
 # Click-Once directory
-Perceptron/publish/
+publish/
 
 # Publish Web Output
-Perceptron/*.[Pp]ublish.xml
-Perceptron/*.azurePubxml
+*.[Pp]ublish.xml
+*.azurePubxml
 # Note: Comment the next line if you want to checkin your web deploy settings,
 # but database connection strings (with potential passwords) will be unencrypted
-Perceptron/*.pubxml
-Perceptron/*.publishproj
+*.pubxml
+*.publishproj
 
 # Microsoft Azure Web App publish settings. Comment the next line if you want to
 # checkin your Azure Web App publish settings, but sensitive information contained
 # in these scripts will be unencrypted
-Perceptron/PublishScripts/
+PublishScripts/
 
 # NuGet Packages
-Perceptron/*.nupkg
+*.nupkg
 # NuGet Symbol Packages
-Perceptron/*.snupkg
+*.snupkg
 # The packages folder can be ignored because of Package Restore
-Perceptron/**/[Pp]ackages/*
+**/[Pp]ackages/*
 # except build/, which is used as an MSBuild target.
-Perceptron/!**/[Pp]ackages/build/
+!**/[Pp]ackages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
 #!**/[Pp]ackages/repositories.config
 # NuGet v3's project.json files produces more ignorable files
-Perceptron/*.nuget.props
-Perceptron/*.nuget.targets
+*.nuget.props
+*.nuget.targets
 
 # Microsoft Azure Build Output
-Perceptron/csx/
-Perceptron/*.build.csdef
+csx/
+*.build.csdef
 
 # Microsoft Azure Emulator
-Perceptron/ecf/
-Perceptron/rcf/
+ecf/
+rcf/
 
 # Windows Store app package directories and files
-Perceptron/AppPackages/
-Perceptron/BundleArtifacts/
-Perceptron/Package.StoreAssociation.xml
-Perceptron/_pkginfo.txt
-Perceptron/*.appx
-Perceptron/*.appxbundle
-Perceptron/*.appxupload
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_pkginfo.txt
+*.appx
+*.appxbundle
+*.appxupload
 
 # Visual Studio cache files
 # files ending in .cache can be ignored
-Perceptron/*.[Cc]ache
+*.[Cc]ache
 # but keep track of directories ending in .cache
-Perceptron/!?*.[Cc]ache/
+!?*.[Cc]ache/
 
 # Others
-Perceptron/ClientBin/
-Perceptron/~$*
-Perceptron/*~
-Perceptron/*.dbmdl
-Perceptron/*.dbproj.schemaview
-Perceptron/*.jfm
-Perceptron/*.pfx
-Perceptron/*.publishsettings
-Perceptron/orleans.codegen.cs
+ClientBin/
+~$*
+*~
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+orleans.codegen.cs
 
 # Including strong name files can present a security risk
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
@@ -253,151 +253,151 @@ Perceptron/orleans.codegen.cs
 #bower_components/
 
 # RIA/Silverlight projects
-Perceptron/Generated_Code/
+Generated_Code/
 
 # Backup & report files from converting an old project file
 # to a newer Visual Studio version. Backup files are not needed,
 # because we have git ;-)
-Perceptron/_UpgradeReport_Files/
-Perceptron/Backup*/
-Perceptron/UpgradeLog*.XML
-Perceptron/UpgradeLog*.htm
-Perceptron/ServiceFabricBackup/
-Perceptron/*.rptproj.bak
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.XML
+UpgradeLog*.htm
+ServiceFabricBackup/
+*.rptproj.bak
 
 # SQL Server files
-Perceptron/*.mdf
-Perceptron/*.ldf
-Perceptron/*.ndf
+*.mdf
+*.ldf
+*.ndf
 
 # Business Intelligence projects
-Perceptron/*.rdl.data
-Perceptron/*.bim.layout
-Perceptron/*.bim_*.settings
-Perceptron/*.rptproj.rsuser
-Perceptron/*- [Bb]ackup.rdl
-Perceptron/*- [Bb]ackup ([0-9]).rdl
-Perceptron/*- [Bb]ackup ([0-9][0-9]).rdl
+*.rdl.data
+*.bim.layout
+*.bim_*.settings
+*.rptproj.rsuser
+*- [Bb]ackup.rdl
+*- [Bb]ackup ([0-9]).rdl
+*- [Bb]ackup ([0-9][0-9]).rdl
 
 # Microsoft Fakes
-Perceptron/FakesAssemblies/
+FakesAssemblies/
 
 # GhostDoc plugin setting file
-Perceptron/*.GhostDoc.xml
+*.GhostDoc.xml
 
 # Node.js Tools for Visual Studio
-Perceptron/.ntvs_analysis.dat
-Perceptron/node_modules/
+.ntvs_analysis.dat
+node_modules/
 
 # Visual Studio 6 build log
-Perceptron/*.plg
+*.plg
 
 # Visual Studio 6 workspace options file
-Perceptron/*.opt
+*.opt
 
 # Visual Studio 6 auto-generated workspace file (contains which files were open etc.)
-Perceptron/*.vbw
+*.vbw
 
 # Visual Studio 6 auto-generated project file (contains which files were open etc.)
-Perceptron/*.vbp
+*.vbp
 
 # Visual Studio 6 workspace and project file (working project files containing files to include in project)
-Perceptron/*.dsw
-Perceptron/*.dsp
+*.dsw
+*.dsp
 
 # Visual Studio 6 technical files
 
 # Visual Studio LightSwitch build output
-Perceptron/**/*.HTMLClient/GeneratedArtifacts
-Perceptron/**/*.DesktopClient/GeneratedArtifacts
-Perceptron/**/*.DesktopClient/ModelManifest.xml
-Perceptron/**/*.Server/GeneratedArtifacts
-Perceptron/**/*.Server/ModelManifest.xml
-Perceptron/_Pvt_Extensions
+**/*.HTMLClient/GeneratedArtifacts
+**/*.DesktopClient/GeneratedArtifacts
+**/*.DesktopClient/ModelManifest.xml
+**/*.Server/GeneratedArtifacts
+**/*.Server/ModelManifest.xml
+_Pvt_Extensions
 
 # Paket dependency manager
-Perceptron/.paket/paket.exe
-Perceptron/paket-files/
+.paket/paket.exe
+paket-files/
 
 # FAKE - F# Make
-Perceptron/.fake/
+.fake/
 
 # CodeRush personal settings
-Perceptron/.cr/personal
+.cr/personal
 
 # Python Tools for Visual Studio (PTVS)
-Perceptron/__pycache__/
-Perceptron/*.pyc
+__pycache__/
+*.pyc
 
 # Cake - Uncomment if you are using it
 # tools/**
 # !tools/packages.config
 
 # Tabs Studio
-Perceptron/*.tss
+*.tss
 
 # Telerik's JustMock configuration file
-Perceptron/*.jmconfig
+*.jmconfig
 
 # BizTalk build output
-Perceptron/*.btp.cs
-Perceptron/*.btm.cs
-Perceptron/*.odx.cs
-Perceptron/*.xsd.cs
+*.btp.cs
+*.btm.cs
+*.odx.cs
+*.xsd.cs
 
 # OpenCover UI analysis results
-Perceptron/OpenCover/
+OpenCover/
 
 # Azure Stream Analytics local run output
-Perceptron/ASALocalRun/
+ASALocalRun/
 
 # MSBuild Binary and Structured Log
-Perceptron/*.binlog
+*.binlog
 
 # NVidia Nsight GPU debugger configuration file
-Perceptron/*.nvuser
+*.nvuser
 
 # MFractors (Xamarin productivity tool) working folder
-Perceptron/.mfractor/
+.mfractor/
 
 # Local History for Visual Studio
-Perceptron/.localhistory/
+.localhistory/
 
 # Visual Studio History (VSHistory) files
-Perceptron/.vshistory/
+.vshistory/
 
 # BeatPulse healthcheck temp database
-Perceptron/healthchecksdb
+healthchecksdb
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
-Perceptron/MigrationBackup/
+MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
-Perceptron/.ionide/
+.ionide/
 
 # Fody - auto-generated XML schema
-Perceptron/FodyWeavers.xsd
+FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
-Perceptron/.vscode/*
-Perceptron/!.vscode/settings.json
-Perceptron/!.vscode/tasks.json
-Perceptron/!.vscode/launch.json
-Perceptron/!.vscode/extensions.json
-Perceptron/*.code-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
 
 # Local History for Visual Studio Code
-Perceptron/.history/
+.history/
 
 # Windows Installer files from build outputs
-Perceptron/*.cab
-Perceptron/*.msi
-Perceptron/*.msix
-Perceptron/*.msm
-Perceptron/*.msp
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
 
 # JetBrains Rider
-Perceptron/*.sln.iml
+*.sln.iml
 
 #Network savefile
 Network.json

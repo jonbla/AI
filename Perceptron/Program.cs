@@ -12,12 +12,12 @@ class Program
         int[,] CSVdata = CSV.Read_CSV(true);
         Console.WriteLine(CSVdata.GetLength(0));
         Console.WriteLine(CSVdata.GetLength(1));
-        Data_label_pack<int> CSVDataPack = CSV.Split_data(CSVdata);
+        Data_label_pack<int> CSVDataPack = CSV.Split_data(CSVdata, 1);
         int[] numericLabels = new int[CSVDataPack.Labels.Count()];
 
         for (int i = 0; i < CSVDataPack.Labels.Count(); i++)
         {
-            numericLabels[i] = int.Parse(CSVDataPack.Labels[i]);
+            numericLabels[i] = Int32.Parse(CSVDataPack.Labels[i]);
         }
 
         Console.WriteLine("\nCreating Network\n");
@@ -33,7 +33,7 @@ class Program
 
         network.CalculateNetwork(Activation.Sigmoid);
 
-        network.PrintInfoVerbose();
+        //network.PrintInfoVerbose();
 
         float avgCost = 0f;
 
@@ -51,11 +51,10 @@ class Program
         Console.WriteLine($"Avg Cost after {CSVDataPack.Data.Length} lines: {avgCost}");
 
 
-        //JSONSerializer serializer = new JSONSerializer();
+        JSONSerializer serializer = new JSONSerializer();
         //serializer.DumpToFile(network, "/Users/dannysedlov/Documents/School/Masters/AM6007 (Computing with numerical)/AI/Network.json", true);
 
-        Console.WriteLine("\nPress Any Key To Exit...");
-        Console.ReadKey();
+        //Console.ReadLine();
     }
 
     static float[] GetTargetVector(int target_value)
